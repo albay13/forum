@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.send{
+	background-image: url("../images/paper-plane.png");
+}
+body,html{
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+.card-top{
+	margin-top: -50px;
+	padding: 15px;
+	border: transparent;
+}
+
+.card{
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.parallax{
+	/* The image used */
+	background-image: url("../images/cloud.jpg");
+
+	/* Set a specific height */
+	height: 300px; 
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.bg-aqua{
+	background-color: #003F6B !important;
+}
+td p{
+	color: black;
+}
+.breadcrumb,.breadcrumb li{
+	background-color: white;
+	margin-bottom: 0px;
+	padding: 0px;
+	font-size: 20px;
+}
+/*loading page*/
+.loader {
+    display: block;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #fafafa url(../images/loader1.gif) no-repeat center center;
+    text-align: center;
+    color: #999;
+    opacity: 1;
+}
