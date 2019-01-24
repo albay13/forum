@@ -10,25 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<?php include 'nav.php'; ?>
 <!-- <div class="loader"></div> -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="card card-top">
-        <ul class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Forum</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<?php 
+	include 'nav.php';
+?>
 <br/><br/>
 <section id="post">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-9">
+			<div class="col-lg-12">
 				<!-- First Category -->
 				<div class="card">
 					<div class="card-header bg-aqua">
@@ -47,7 +37,8 @@
 							<tbody>
 								<tr>
 									<td style="width: 20%; text-align: center;"><p class="text-dark"><img src="assets/images/bubble.png" width="44" height="44"></td>
-									<td style="width: 30%;text-align: left;"><p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></p>
+									<td style="width: 30%;text-align: left;"><p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a><br/><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</small></p>
+									<br/>
 									<small>Posted 1 year ago</small>
 									</td>
 									<td style="width: 30%; text-align: center;"><p>5/27</p></td>
@@ -159,51 +150,6 @@
 										12 Mar 2019, Saturday
 										</p>
 									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="card">
-					<div class="card-header bg-aqua text-light">Categories</div>
-					<div class="card-body">
-						<table class="table table-striped">
-							<tbody>
-								<tr>
-									<td>First Category</td>
-								</tr>
-								<tr>
-									<td>Second Category</td>
-								</tr>
-								<tr>
-									<td>Third Category</td>
-								</tr>
-								<tr>
-									<td>Fourth Category</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<br/>
-				<div class="card">
-					<div class="card-header bg-aqua text-light">Recent Post</div>
-					<div class="card-body">
-						<table class="table table-striped">
-							<tbody>
-								<tr>
-									<td>Post 1</td>
-								</tr>
-								<tr>
-									<td>Post 2</td>
-								</tr>
-								<tr>
-									<td>Post 3</td>
-								</tr>
-								<tr>
-									<td>Post 4</td>
 								</tr>
 							</tbody>
 						</table>

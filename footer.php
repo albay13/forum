@@ -10,7 +10,7 @@
         <div class="col-md-6 mt-md-0 mt-3">
 
           <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
+          <h5 class="text-uppercase">About Online Forum</h5>
           <p class="text-justify">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -29,20 +29,20 @@
         <div class="col-md-3 mb-md-0 mb-3">
 
             <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
+            <h5 class="text-uppercase">Quick Links</h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Home</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">About</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Contact</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Login</a>
               </li>
             </ul>
 
@@ -53,20 +53,14 @@
           <div class="col-md-3 mb-md-0 mb-3">
 
             <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
+            <h5 class="text-uppercase">Contact Information</h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                Address : 9153 Paterost St. Makati City
               </li>
               <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
+                Contact Number : 09124-583-714 / 833-5592
               </li>
             </ul>
 

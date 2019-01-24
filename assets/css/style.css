@@ -12,6 +12,8 @@ body,html{
 	margin-top: -50px;
 	padding: 15px;
 	border: transparent;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
 .card{
@@ -56,4 +58,44 @@ td p{
     text-align: center;
     color: #999;
     opacity: 1;
+}
+/*create post*/
+input{
+	padding: 5px;
+}
+/*hr with text*/
+.divider-new {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+
+.divider-new h5 {
+  margin-top: 5px;
+}
+
+.divider-new:before {
+  content: '';
+  height: 1.5px;
+  background: #c6c6c6;
+  flex: 1;
+  margin: 0 .45em 0 0;
+}
+
+.divider-new:after {
+  content: '';
+  height: 1.5px;
+  background: #c6c6c6;
+  flex: 1;
+  margin: 0 0 0 .45em;
+
+}
+.btn-facebook{
+	background-color: #3b5998;
+}
+.btn-google{
+	background-color: #dd4b39;
 }
