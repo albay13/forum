@@ -1,3 +1,10 @@
+<?php 
+ include 'Main.class.php';
+ $main = new Main();
+ if(isset($_REQUEST["submit"])){
+ 	extract($_REQUEST);
+ }
+?>
 <!DOCTYPE html>
 <html>
 <head>
