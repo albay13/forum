@@ -1,0 +1,131 @@
+{
+  "_args": [
+    [
+      "pg-calendar",
+      "/var/www/html/forum/assets"
+    ]
+  ],
+  "_from": "pg-calendar@latest",
+  "_id": "pg-calendar@1.4.30",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/pg-calendar",
+  "_nodeVersion": "10.3.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/pg-calendar_1.4.30_1532945012236_0.028853520923930676"
+  },
+  "_npmUser": {
+    "email": "kennethan@nhpcw.com",
+    "name": "kenneth-ceyer"
+  },
+  "_npmVersion": "6.1.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "pg-calendar",
+    "raw": "pg-calendar",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/pg-calendar/-/pg-calendar-1.4.30.tgz",
+  "_shasum": "979b182e6e61c3c26fad2b83b79f31872f8d472a",
+  "_shrinkwrap": null,
+  "_spec": "pg-calendar",
+  "_where": "/var/www/html/forum/assets",
+  "author": {
+    "email": "kennethan@nhpcw.com",
+    "name": "PIGNOSE"
+  },
+  "bugs": {
+    "url": "https://github.com/KennethanCeyer/PIGNOSE-Calendar/issues"
+  },
+  "contributors": [
+    {
+      "name": "Adrian Hernandez",
+      "url": "https://github.com/adrian2monk"
+    }
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2"
+  },
+  "description": "Beautiful and eidetic jQuery date picker plguin.",
+  "devDependencies": {
+    "almond": "^0.3.3",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "grunt": "^1.0.3",
+    "grunt-babel": "^7.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-contrib-uglify": "^3.4.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-css-url-rewrite": "0.3.5",
+    "grunt-umd": "^3.0.0",
+    "jsdom": "^11.12.0",
+    "less-plugin-autoprefix": "^2.0.0",
+    "libumd": "^0.9.0",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "rimraf": "^2.6.2"
+  },
+  "directories": {},
+  "dist": {
+    "fileCount": 54,
+    "integrity": "sha512-wGqugR6PyuQD6bbsAKrqVja6ve4MLQZ4stuuMwsvuDQKMqcB40SIpuiNIpw6x3+NZsEaYgvq0wm1L77Rox8X6Q==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbXuJ0CRA9TVsSAnZWagAApJIP+QFUTj1BIM2jIbaYqAuN\nShd8nILEaodhKGgXYssjULUx2dactvP3ID+u+azFK6OZfwnyRxUm1nqpkg9L\n+Qp+9ArMB6JIIt+kGexP+fBBmVPoYg4ApKvPgY0gzY16IXr6z7lch6hZjj4P\nxSbfeJavS4DvmTi9E8WkyWTRnG7LouJMFIwSLMxLgmFtIuziRtTHosrhTT++\nwpjBWrpWFIb7MYXQZ40SsPSNAoa00hQorSw1cMT98qBuENxKEeqjPz3DzTd9\njXPtfYLWOP0b0yJkbV2TQgnBmj4NxygTMUqSgiy99nNIIAGwg+Z1Z0HOnn5L\nK8GID0JuDehH3e2k544L8WznPNTwpb5c1pwi3PHMjFNbMQuvvVbEWC010jDW\n2n3HjqdfZBPKxQFQrMaXdnO54MyvM+12aB5z94Yv7kJbDM3Xxlntohj3sbC5\ncIjalkFv5x10lIV6/ItCZ84o4U6+uz4gCgC35W3ne0gd9AlHztw94ytjfExu\naFg/uIT6nROzopwWy04bu4lJtwqQK7BAEWwv+3rR/9Rn4Z6T69gqYh5pXQ33\nmjea9KVJE6GZmREnItCDMGLjpy4psUnBNTnjnfBU+Cq6m5kAdFVuNSPkT4IS\nSZL/IUvKPGw6Xp8B+CMl8T+az0/sd3ivk/BunFssLjTD8vxUaN4YCIP8Mbus\n1wdB\r\n=kozq\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "979b182e6e61c3c26fad2b83b79f31872f8d472a",
+    "tarball": "https://registry.npmjs.org/pg-calendar/-/pg-calendar-1.4.30.tgz",
+    "unpackedSize": 456090
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "gitHead": "a4a6e11f4246983fffeefa08df0042a6651dbeab",
+  "homepage": "https://www.pigno.se/barn/PIGNOSE-Calendar/",
+  "keywords": [
+    "date",
+    "datepicker",
+    "jquery",
+    "kennethanceyer",
+    "material",
+    "pignose",
+    "plugin",
+    "toggle"
+  ],
+  "license": "MIT",
+  "main": "dist/js/pignose.calendar.js",
+  "maintainers": [
+    {
+      "name": "kenneth-ceyer",
+      "email": "kennethan@nhpcw.com"
+    }
+  ],
+  "name": "pg-calendar",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KennethanCeyer/PIGNOSE-Calendar.git"
+  },
+  "scripts": {
+    "build": "grunt",
+    "clean": "rimraf ./coverage ./.nyc_output",
+    "coverage": "nyc report --reporter=text-lcov > ./coverage/coverage.lcov && cat ./coverage/coverage.lcov | coveralls && codecov -t e0e9165c-fa05-48bd-8b42-9e221c01f84d",
+    "test": "npm run clean && nyc --reporter=html --reporter=json ./node_modules/mocha/bin/mocha **/*.spec.js -t 1000"
+  },
+  "version": "1.4.30"
+}

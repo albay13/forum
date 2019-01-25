@@ -1,3 +1,7 @@
+<?php
+include 'main.class.php';
+$main = new Main();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +16,18 @@
 <body>
 <?php 
 	include 'nav.php';
+	if(isset($_REQUEST["login"])){
+		extract($_REQUEST);
+		$login = $main->check_login($username,$password);
+		if($login){
+			echo "Login Success";
+		}else{
+			echo "Email or username / password is incorrect";
+		}
+	}
+	if(isset($_SESSION['id'])){
+		header('Location:home.php');
+	}
 ?>	
 <br/><br/>
 <div class="container">
@@ -19,22 +35,22 @@
 		<div class="col-lg-9">
 			<h3>Login via</h3>
             <p>Online Forum Account Information </p>
-			<form>
+			<form action="" method="post" id="login_form" name="login_form">
 				<div class="form-group row">
 					<div class="col-lg-9">
-						<label class="control-label font-weight-bold">Username or Email</label>
-						<input type="text" name="" class="form-control" placeholder="Enter Username or Email">
+						<label class="control-label font-weight-bold">Username</label>
+						<input type="text" name="username" id="username" class="form-control" placeholder="Enter Username">
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-lg-9">
 						<label class="control-label font-weight-bold">Password</label>
-						<input type="password" name="" class="form-control" placeholder="Enter Password">
+						<input type="password" name="password" id="password" class="form-control" placeholder="Enter Password">
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-lg-3">
-						<button class="form-control btn btn-primary">LOGIN</button>
+						<button id="login" name="login" class="form-control btn btn-primary">LOGIN</button>
 					</div>
 				</div>
 				 <center>
@@ -115,6 +131,11 @@
 		 $(document).ready(function() {
             $('.loader').fadeOut(1000);
           });
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$
+		});
 	</script>
 </body>
 </html>

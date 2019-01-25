@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
-    <a class="float-left navbar-brand text-uppercase ml-5" href="index.html"><b>ONLINE <span style="columns: #003F6B !important;">FORUM</span></b></a>
+    <a class="float-left navbar-brand text-uppercase ml-5" href="index.html"><b>IT Help <span style="columns: #003F6B !important;">Desk Forum</span></b></a>
     <div class="d-flex flex-row order-2 order-lg-3 ml-auto mr-5">
         <ul class="navbar-nav flex-row">
             <li class="nav-item"><a class="nav-link px-2" href="#"><span class="fa fa-facebook"></span></a></li>
