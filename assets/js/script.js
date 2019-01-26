@@ -1,8 +1,8 @@
 //Computation of Grade
 function submitBday() {
 	var Q4A = "";
-	var Bdate = document.getElementById('birthdate').value;
-	var Bday = +new Date(Bdate.toUTCString());
+	var Bdate = document.getElementById('hidden-birthdate').value;
+	var Bday = +new Date(Bdate);
 	Q4A += ~~ ((Date.now() - Bday) / (31557600000));
 	var age = document.getElementById('age').value=Q4A; 
 	if(age <= 17 || age >= 80){

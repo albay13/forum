@@ -16,18 +16,6 @@ $main = new Main();
 <body>
 <?php 
 	include 'nav.php';
-	if(isset($_REQUEST["login"])){
-		extract($_REQUEST);
-		$login = $main->check_login($username,$password);
-		if($login){
-			echo "Login Success";
-		}else{
-			echo "Email or username / password is incorrect";
-		}
-	}
-	if(isset($_SESSION['id'])){
-		header('Location:home.php');
-	}
 ?>	
 <br/><br/>
 <div class="container">
@@ -35,6 +23,23 @@ $main = new Main();
 		<div class="col-lg-9">
 			<h3>Login via</h3>
             <p>Online Forum Account Information </p>
+            <?php
+			if(isset($_POST["login"])){
+				extract($_POST);
+				$login = $main->check_login($username,$password);
+				if($login){
+					header("Location:forLogin/index.php");
+				}else{
+				echo "<div class='alert alert-danger'>
+						<strong>Login Failed!</strong> Email or username / password is incorrect.
+						</div>";
+				}
+			}
+			if(isset($_SESSION['id'])){
+				header('Location:forLogin/index.php');
+			}
+
+            ?>
 			<form action="" method="post" id="login_form" name="login_form">
 				<div class="form-group row">
 					<div class="col-lg-9">
@@ -127,6 +132,8 @@ $main = new Main();
 	<script type="text/javascript" src="assets/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="assets/js/tinymce/tinymce.js"></script>
     <script type="text/javascript" src="assets/js/tinymce/init-tinymce.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+	<script src="assets/js/login.js"></script>
 	<script>
 		 $(document).ready(function() {
             $('.loader').fadeOut(1000);

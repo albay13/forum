@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Singapore');
 class Main{
 	public $con;
 	private $hostName = "localhost";
@@ -41,7 +42,9 @@ class Main{
 				$output2 = array_merge($last_id, $data);
 			}
 			$this->insert_data('personal_details',$output2);
-			echo "Registration Successful";
+			echo "<div class='alert alert-success'>
+						<strong>Success!</strong> You have successfully created an account.
+						</div>";
 		}
 	}
 	//Insert of data
@@ -54,8 +57,13 @@ class Main{
 		if($query){
 			return true;
 		}else{
-			die("Unable to insert data");
+			return false;
 		}
+	}
+	public function fetch_data($table){
+		$query = "SELECT * FROM ".$table;
+		$result = mysqli_query($this->con,$query);
+		return $result;
 	}
 	//Real time checking of username if exist
 	public function check_username($username){
@@ -63,22 +71,32 @@ class Main{
 		$result = mysqli_query($this->con,$query);
 		$count_rows = $result->num_rows;
 		if($count_rows > 0){
-			echo "Username already exist";
+			echo 'false';
 		}else{
-			echo "";
+			echo 'true';
 		}
 	}
-	//Login, username or password if correct
+	//Login, username or password if cairo_surface_mark_dirty_rectangle(surface, x, y, width, height)
 	public function check_login($username,$password){
 		$password = md5($password);
 		$query = "SELECT * FROM login_details WHERE username='$username' AND password = '$password'";
 		$result = mysqli_query($this->con,$query);
+		$rows = mysqli_fetch_array($result);
 		$count_rows = $result->num_rows;
 		if($count_rows > 0){
+			$_SESSION["login"] = true;
+			$_SESSION["id"] = $rows["id"];
 			return true;
 		}else{
 			return false;
 		}
+	}
+	public function get_session(){
+		return $_SESSION["login"];
+	}
+	public function logout(){
+		$_SESSION["login"] = false;
+		session_destroy();
 	}
 
 }

@@ -10,7 +10,7 @@
         </ul>
     </div>
 </nav>
-<div class="d-block w-100 parallax"></div>
+<div class="d-block w-100 login-parallax"></div>
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
@@ -25,16 +25,22 @@
             <a class="nav-link" href="index.php"> Home <span class="sr-only">(current)</span></a>
           </li>
            <li class="nav-item text-uppercase active">
-            <a class="nav-link" href="about.php">About</a>
+            <a class="nav-link" href="about.php">Profile</a>
           </li>
            <li class="nav-item text-uppercase active">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
+        </ul>
+        <ul class="navbar-nav ml-auto ml-5 mt-2 mt-lg-0">
            <li class="nav-item text-uppercase active">
-            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link" href="about.php"><i class="fa fa-bell text-primary"></i></a>
+            <!-- Icon created by nfo@pixelbuddha.net from www.flaticon.com -->
           </li>
-          <li class="nav-item text-uppercase active">
-              <a class="nav-link" href="registration.php">Register</a>
+           <li class="nav-item text-uppercase active">
+            <a class="nav-link" href="contact.php"><i class="fa fa-envelope text-primary"></i></a>
+          </li>
+           <li class="nav-item text-uppercase active">
+            <a class="nav-link" href="?logout=logout">Logout</a>
           </li>
         </ul>
       </div>
