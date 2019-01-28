@@ -36,16 +36,16 @@ if(isset($_GET["logout"])){
 			$count_topic = mysqli_fetch_array($number_of_topic);
 			$number_of_reply = $main->count_data("reply_tbl where category_id = ".$row["id"]);
 			$count_reply = mysqli_fetch_array($number_of_reply);
-			$fetch_latest = $main->fetch_data("reply_tbl where date_posted IN (SELECT max(date_posted) FROM reply_tbl) and category_id=".$row["id"]);
-			$latest_data = mysqli_fetch_array($fetch_latest);
-			$login_id = $latest_data["login_id"];
-			$topic_id = $latest_data["topic_id"];
-			$author_data = $main->fetch_data("personal_details where id=".$login_id);
-			$auth = mysqli_fetch_array($author_data);
-			$fetch_topic = $main->fetch_data("topic_tbl where id=".$topic_id." and login_id= ".$login_id);
-			$topic_data=mysqli_fetch_array($fetch_topic);
-			$date_create = date_create($latest_data["date_posted"]);
-			$date_formatted = date_format($date_create,"j M Y, l, h:i A");
+			// $fetch_latest = $main->fetch_data("reply_tbl where date_posted IN (SELECT max(date_posted) FROM reply_tbl) and category_id=".$row["id"]);
+			// $latest_data = mysqli_fetch_array($fetch_latest);	
+			// $login_id = $latest_data["login_id"];
+			// $topic_id = $latest_data["topic_id"];
+			// $author_data = $main->fetch_data("personal_details where id=".$login_id);
+			// $auth = mysqli_fetch_array($author_data);
+			// $fetch_topic = $main->fetch_data("topic_tbl where id=".$topic_id." and login_id= ".$login_id);
+			// $topic_data=mysqli_fetch_array($fetch_topic);
+			// $date_create = date_create($latest_data["date_posted"]);
+			// $date_formatted = date_format($date_create,"j M Y, l, h:i A");
 		?>
 			<div class="row">
 			<div class="col-lg-12">
@@ -57,7 +57,7 @@ if(isset($_GET["logout"])){
 								<tr>
 									<th class="text-light" style="width: 50%;"><?php echo $row["categories"]; ?></th>
 									<th class="text-light" style="width: 30%; text-align: center;">Topic / Post</th>
-									<th class="text-light" style="width: 20%;">Last post</th>
+									<!-- <th class="text-light" style="width: 20%;">Last post</th> -->
 								</tr>
 							</thead>
 						</table>
@@ -83,11 +83,11 @@ if(isset($_GET["logout"])){
 									<small><?php echo $rows["description"]; ?></small></p>
 									</td>
 									<td style="width: 30%; text-align: center;"><p><?php echo $count_topic["total"]; ?> / <?php echo $count_reply["total"]; ?></p></td>
-									<td style="width: 20%;">
+									<!-- <td style="width: 20%;">
 										<p>By <?php  echo $auth["last_name"].", ".$auth["first_name"]; ?><br/><?php echo "<small>in  <a href='view_replies.php?sub_category_id=".$topic_data["sub_category_id"]."&topic_id=".$topic_data["id"]."'> Re:".$topic_data["topic"]."</a></small>"; ?><br/>
 										<?php echo "<small>".$date_formatted."</small>"; ?>
 										</p>
-									</td>
+									</td> -->
 									</tr>
 											</tbody>
 										</table>
@@ -107,4 +107,9 @@ if(isset($_GET["logout"])){
 	include '../footer.php';
 ?>
 </body>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../assets/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="../assets/js/tinymce/tinymce.js"></script>
+    <script type="text/javascript" src="../assets/js/tinymce/init-tinymce.js"></script>
 </html>
