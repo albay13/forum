@@ -32,6 +32,20 @@ if(isset($_GET["logout"])){
 		<?php
 			$data = $main->fetch_data("categories");
 			foreach($data as $row){
+			$number_of_topic = $main->count_data("topic_tbl where category_id = ".$row["id"]);
+			$count_topic = mysqli_fetch_array($number_of_topic);
+			$number_of_reply = $main->count_data("reply_tbl where category_id = ".$row["id"]);
+			$count_reply = mysqli_fetch_array($number_of_reply);
+			$fetch_latest = $main->fetch_data("reply_tbl where date_posted IN (SELECT max(date_posted) FROM reply_tbl) and category_id=".$row["id"]);
+			$latest_data = mysqli_fetch_array($fetch_latest);
+			$login_id = $latest_data["login_id"];
+			$topic_id = $latest_data["topic_id"];
+			$author_data = $main->fetch_data("personal_details where id=".$login_id);
+			$auth = mysqli_fetch_array($author_data);
+			$fetch_topic = $main->fetch_data("topic_tbl where id=".$topic_id." and login_id= ".$login_id);
+			$topic_data=mysqli_fetch_array($fetch_topic);
+			$date_create = date_create($latest_data["date_posted"]);
+			$date_formatted = date_format($date_create,"j M Y, l, h:i A");
 		?>
 			<div class="row">
 			<div class="col-lg-12">
@@ -48,37 +62,41 @@ if(isset($_GET["logout"])){
 							</thead>
 						</table>
 					</div>
-					<div class="card-body">
-						<table id="first-category" class="table table-striped" style="width: 100%;">
-							<tbody>
-								<?php 
+					
+
+				</div>
+			</div>
+			</div>
+			<?php 
 									$fetch_sub_categories = $main->fetch_data("sub_categories");
 									foreach ($fetch_sub_categories as $rows) {
 										if($row["id"] == $rows["category_id"]){
-								?>
+								?>	
+									<div class="row my-2">
+										<div class="col-lg-12">
+									<table id="first-category" class="table table-striped" style="width: 100%;">
+										<tbody>
 									<tr>
 									<td style="width: 20%; text-align: center;"><p class="text-dark"><img src="../assets/images/bubble.png" width="44" height="44"></td>
-									<td style="width: 30%;text-align: left;"><p><a href="sub_category.php?id=<?php echo $rows["id"];  ?>"><?php echo $rows["sub_category"]; ?></a><br/>
+									<td style="width: 30%;text-align: left;"><p><a href="sub_category.php?category_id=<?php echo $rows["category_id"];?>&sub_category_id=<?php echo $rows["id"];  ?>"><?php echo $rows["sub_category"]; ?></a><br/>
 									<!-- Description -->
 									<small><?php echo $rows["description"]; ?></small></p>
 									</td>
-									<td style="width: 30%; text-align: center;"><p>5/27</p></td>
+									<td style="width: 30%; text-align: center;"><p><?php echo $count_topic["total"]; ?> / <?php echo $count_reply["total"]; ?></p></td>
 									<td style="width: 20%;">
-										<p>By Albay, Noli <br/>
-										12 Mar 2019, Saturday
+										<p>By <?php  echo $auth["last_name"].", ".$auth["first_name"]; ?><br/><?php echo "<small>in  <a href='view_replies.php?sub_category_id=".$topic_data["sub_category_id"]."&topic_id=".$topic_data["id"]."'> Re:".$topic_data["topic"]."</a></small>"; ?><br/>
+										<?php echo "<small>".$date_formatted."</small>"; ?>
 										</p>
 									</td>
 									</tr>
+											</tbody>
+										</table>
+									</div>
+									</div>
 								<?php
 										}
 									}
 								?>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
 		<br/>
 		<?php 
 			}

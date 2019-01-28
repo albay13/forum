@@ -65,7 +65,7 @@
 				<div class="form-group row">
 					<div class="col-lg-4">
 						<label class="control-label font-weight-bold">Password</label>
-						<input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" required>
+						<input type="password" name="password" id="password" class="form-control" placeholder="Enter Password">
 					</div>
 					<div class="col-lg-4">
 						<label class="control-label font-weight-bold">Confirm Password</label>

@@ -65,6 +65,11 @@ class Main{
 		$result = mysqli_query($this->con,$query);
 		return $result;
 	}
+	public function count_data($table){
+		$query = "SELECT count(*) as total FROM ".$table;
+		$result = mysqli_query($this->con,$query);
+		return $result;
+	}
 	//Real time checking of username if exist
 	public function check_username($username){
 		$query = "SELECT * FROM login_details WHERE username = '$username'";
@@ -98,6 +103,27 @@ class Main{
 		$_SESSION["login"] = false;
 		session_destroy();
 	}
+	function post_captcha($user_response) {
+        $fields_string = '';
+        $fields = array(
+            'secret' => '6LekKI0UAAAAACbzBp78N4EQSyGH_ml0szJq3nCg',
+            'response' => $user_response
+        );
+        foreach($fields as $key=>$value)
+        $fields_string .= $key . '=' . $value . '&';
+        $fields_string = rtrim($fields_string, '&');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+        curl_setopt($ch, CURLOPT_POST, count($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($result, true);
+    }
 
 }
 ?>

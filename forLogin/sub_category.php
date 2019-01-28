@@ -29,15 +29,12 @@ if(isset($_GET["logout"])){
 <br/><br/>
 <section id="post">
 	<div class="container">
-			<div class="row">
+			<div class="row mb-2">
 			<div class="col-lg-12">
-				<ul class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li><a href="#">Pictures</a></li>
-				  <li><a href="#">Summer 15</a></li>
-				  <li>Italy</li>
-				</ul>
 				<!-- Category -->
+				<div class="mb-1">
+					<a class="btn btn-secondary btn-sm text-uppercase" href="create_post.php?category_id=<?php echo $_GET["category_id"]; ?>&sub_category_id=<?php echo $_GET["sub_category_id"]; ?>">Add New Topic</a>
+				</div>
 				<div class="card">
 					<div class="card-header bg-aqua">
 						<table style="width: 100%;">
@@ -50,41 +47,10 @@ if(isset($_GET["logout"])){
 							</thead>
 						</table>
 					</div>
-					<div class="card-body">
-						<table id="first-category" class="table table-striped" style="width: 100%;">
-							<tbody>
-								<?php 
-									$data = $main->fetch_data("topic_tbl where sub_category_id=".$_GET["id"]);
-									foreach($data as $row){
-								?>
-									<tr>
-									<td style="width: 20%; text-align: center;"><p class="text-dark"><img src="../assets/images/bubble.png" width="44" height="44"></td>
-									<td style="width: 30%;text-align: left;"><p><a href="?sub_category_id=<?php echo $rows["id"];  ?>"><?php echo $row["topic"]; ?></a><br/>
-									<!-- Description -->
-									<small><?php echo $row["description"]; ?></small></p>
-									</td>
-									<td style="width: 30%; text-align: center;"><p>5/27</p></td>
-									<td style="width: 20%;">
-										<?php
-											$account_name = $main->fetch_data("personal_details where login_id=".$_SESSION["id"]);
-											$name = mysqli_fetch_array($account_name);
-										?>
-										<p><?php echo "By ".$name["last_name"].", ".$name["first_name"] ?><br/>
-										<?php 
-										$date = date_create($row["date_posted"]);
-										echo date_format($date,"j M Y, l"); ?>
-										</p>
-									</td>
-									</tr>
-								<?php
-										}
-								?>
-							</tbody>
-						</table>
-					</div>
 				</div>
 			</div>
 		</div>
+		<div class="sub-category"></div>
 		<br/>
 	</div>
 </section>
@@ -92,4 +58,26 @@ if(isset($_GET["logout"])){
 	include '../footer.php';
 ?>
 </body>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../assets/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="../assets/js/tinymce/tinymce.js"></script>
+    <script type="text/javascript" src="../assets/js/tinymce/init-tinymce.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			time_ago();
+			function time_ago(){
+				$.post(
+					"../ajax_files/time_ago.php",
+					{category_id:"<?php echo $_GET["category_id"] ?>",sub_category_id:"<?php echo $_GET["sub_category_id"]; ?>"},
+					function(data){
+						$(".sub-category").html(data);
+					});
+			}
+			setInterval(function(){
+				time_ago();
+			},3000);
+			
+		});
+	</script>
 </html>

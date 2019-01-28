@@ -24,9 +24,9 @@
           <li class="nav-item text-uppercase active">
             <a class="nav-link" href="index.php"> Home <span class="sr-only">(current)</span></a>
           </li>
-           <li class="nav-item text-uppercase active">
-            <a class="nav-link" href="about.php">Profile</a>
-          </li>
+              <li class="nav-item text-uppercase active">
+              <a class="nav-link" href="about.php">Profile</a>
+            </li>
            <li class="nav-item text-uppercase active">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
