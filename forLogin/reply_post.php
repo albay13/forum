@@ -30,6 +30,7 @@ $row = mysqli_fetch_array($fetch_topic);
 <?php
 	include 'login-nav.php';
 ?>
+<div class="loader"></div>
 <div class="container-fluid py-3">
 	<div class="row">
 		<div class="col-lg-10">
@@ -138,6 +139,11 @@ $row = mysqli_fetch_array($fetch_topic);
                     $("#post-title").html($this);
                 }
             });
+          });
+	</script>
+	<script>
+		 $(document).ready(function() {
+            $('.loader').fadeOut(1000);
           });
 	</script>
 </html>

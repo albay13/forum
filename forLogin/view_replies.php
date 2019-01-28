@@ -23,6 +23,7 @@
 	$date = date_create($topic["date_posted"]);
 	$formatted_date = date_format($date, "M j, Y, h:i A");
 ?>
+<div class="loader"></div>
 <br/><br/>
 <section id="reply">
 	<div class="container">
@@ -93,5 +94,10 @@
 				);
 			}
 		});
+	</script>
+	<script>
+		 $(document).ready(function() {
+            $('.loader').fadeOut(1000);
+          });
 	</script>
 </html>

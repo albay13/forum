@@ -26,6 +26,7 @@ if(isset($_GET["logout"])){
 <?php
 	include 'login-nav.php';
 ?>
+<div class="loader"></div>
 <br/><br/>
 <section id="post">
 	<div class="container">
@@ -79,5 +80,10 @@ if(isset($_GET["logout"])){
 			},3000);
 			
 		});
+	</script>
+	<script>
+		 $(document).ready(function() {
+            $('.loader').fadeOut(1000);
+          });
 	</script>
 </html>

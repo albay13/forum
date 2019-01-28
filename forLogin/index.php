@@ -26,6 +26,7 @@ if(isset($_GET["logout"])){
 <?php
 	include 'login-nav.php';
 ?>
+<div class="loader"></div>
 <br/><br/>
 <section id="post">
 	<div class="container">
@@ -112,4 +113,9 @@ if(isset($_GET["logout"])){
 	<script type="text/javascript" src="../assets/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript" src="../assets/js/tinymce/tinymce.js"></script>
     <script type="text/javascript" src="../assets/js/tinymce/init-tinymce.js"></script>
+    <script>
+		 $(document).ready(function() {
+            $('.loader').fadeOut(1000);
+          });
+	</script>
 </html>
